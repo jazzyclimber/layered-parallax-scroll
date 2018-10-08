@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+      *, *:before, *:after {
+        box-sizing: border-box;
+      }
+      html, body {
+        padding: 0;
+        margin: 0;
+      }
+
+      #hero {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+      .layer {
+        width: inherit;
+        height: inherit;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: fixed;
+        z-index: -1;
+      }
+      .bg {
+        background-image: url("background.png");
+      }
+      .layer-1 {
+        background-image: url("layer-1.png");
+      }
+      .layer-2 {
+        background-image: url("layer-2.png");
+      }
+      .layer-3 {
+        background-image: url("layer-3.png");
+      }
+      .top {
+        background-image: url("top.png");
+        background-position: 0 98%;
+
+      }
+      section {
+        background-image: linear-gradient( to bottom, rgba(43, 3, 2, .95) 25%, black 100%);
+        background-image: -moz-linear-gradient(to bottom, rgba(43, 3, 2, .95) 25%, black 100%);
+        background-image: -webkit-linear-gradient(to bottom, rgba(43, 3, 2, .95) 25%, black 100%);
+        padding: 50px;
+        margin: 0;
+      }
+      section p {
+        margin: 0 auto;
+        max-width: 700px;
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.5;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div id="hero">
+      <div class="layer bg" data-type="parallax" data-depth="0"></div>
+      <div class="layer layer-1" data-type="parallax" data-depth=".1"></div>
+      <div class="layer layer-2" data-type="parallax" data-depth=".4"></div>
+      <div class="layer layer-3" data-type="parallax" data-depth=".75"></div>
+      <div class="layer top" data-type="parallax" data-depth="1"></div>
+    </div>
+    <section>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa nihil et numquam dolorem nam dolor illo repellendus aliquam, provident, possimus architecto hic, ut quidem quia incidunt, sunt facilis. Deserunt vitae, itaque. Ullam ipsam necessitatibus consequuntur, sequi voluptates, eum recusandae, temporibus sit cum ad excepturi nihil! Dolor necessitatibus adipisci ullam magni voluptates temporibus beatae vero consectetur sequi a ex officiis eos labore sapiente fugiat aliquam eveniet eligendi quidem, laudantium. Accusamus similique libero consequatur. Doloremque, sint, cumque. Aspernatur dolorem amet pariatur esse omnis aut nihil accusantium rerum maxime ad reiciendis, voluptatum quae illo, numquam obcaecati! Placeat, odio error vero ab ex temporibus similique, atque iste. Ipsa, eum, sequi. Sit adipisci placeat, pariatur cupiditate quaerat non, numquam incidunt eveniet cum consequatur. Laborum, soluta. Quis rem accusamus, odio illum corporis facere obcaecati repudiandae quia soluta ullam suscipit ea quos minima perspiciatis. Ipsam illo voluptatem facilis id ea debitis autem quibusdam ipsum iusto sequi consequuntur tempore ut, dolore quisquam, quae vero, deleniti voluptate aliquid? Sunt iure voluptatum fugiat nihil, eaque hic accusantium ab iste veniam. Voluptatibus voluptatum amet quidem temporibus, neque doloremque expedita rerum dolores et laudantium repellat nostrum debitis pariatur minima ut quia eveniet eligendi deserunt maiores. Iste inventore ad, numquam itaque omnis quaerat aliquid assumenda. Illo obcaecati unde dolores molestias ipsam aut quas, illum debitis, nemo explicabo consequuntur ad et in sequi adipisci cumque amet deleniti natus corrupti doloremque laborum. Nulla veritatis quisquam expedita officia minima hic tenetur ullam autem alias, voluptatum dolore dolor quasi porro atque facere velit totam in repellendus nostrum sapiente earum delectus? Libero, tempore consequatur, quibusdam unde officiis consectetur nulla? Libero eveniet architecto ex nesciunt dolores, quia beatae vitae nobis dolore accusamus, reiciendis, id cupiditate adipisci? Eaque, nisi corporis. Dicta rem, porro neque laboriosam vero error optio praesentium harum nihil ea veritatis enim cum perferendis architecto eaque itaque. Accusantium, unde, aperiam. Nihil voluptas, dicta assumenda inventore. Possimus tempora quos cum totam perspiciatis perferendis quia accusantium natus iusto quam et dolore officia, in aliquid eveniet, magnam iste, hic fuga, sed omnis esse amet ducimus. Repellendus a voluptatem consectetur, deleniti eos ratione. Ea aliquam ipsum incidunt officiis accusamus cum nostrum, magnam quasi est aperiam suscipit, harum nesciunt ratione possimus quibusdam. Repellendus culpa quibusdam rerum quae quia unde illum quas officiis minima iure ad hic, voluptas provident beatae aut numquam deleniti doloribus earum eligendi vel dicta cumque consequuntur vero repellat. Quidem qui similique architecto fugiat quaerat. Quaerat in ipsum fugiat ipsa!</p>
+    </section>
+
+    <footer>
+      <script>
+
+        window.addEventListener('scroll', function(event) {
+          var depth, distanceScrolled, i, layer, layers, len, movement, translate3d;
+          distanceScrolled = this.pageYOffset;
+          layers = document.querySelectorAll("[data-type='parallax']");
+          for (i = 0, len = layers.length; i < len; i++) {
+            layer = layers[i];
+            depth = layer.getAttribute('data-depth');
+            movement = -(distanceScrolled * depth);
+            translate3d = 'translate3d(0, ' + movement + 'px, 0)';
+            layer.style.transform = translate3d;
+          }
+        });
+
+
+      </script>
+    </footer>
+
+
+  </body>
+</html>
